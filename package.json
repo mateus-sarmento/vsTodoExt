@@ -11,10 +11,31 @@
 	],
 	"activationEvents": [
 		"onCommand:vstoDo.helloWorld",
-		"onCommand:vstoDo.askQuestion"
+		"onCommand:vstoDo.askQuestion",
+		"onView:vstodo-sidebar"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+			{
+				"id": "vstodo-sidebar-view",
+				"title": "VStodo",
+				"icon": "media/mySvg.svg"
+			}
+			]
+		},
+		"views": {
+			"vstodo-sidebar-view": [
+			{
+				"type": "webview",
+				"id": "vstodo-sidebar",
+				"name": "VStodo",
+				"icon": "media/mySvg.svg",
+				"contextualTitle": "VStodo"
+			}
+			]
+		},
 		"commands": [
 			{
 				"command": "vstoDo.helloWorld",
