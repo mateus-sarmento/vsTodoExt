@@ -6,6 +6,7 @@ import { SidebarProvider } from './SidebarProvider';
 
 const decorationType = vscode.window.createTextEditorDecorationType({
 	backgroundColor: "green",
+	isWholeLine: true,
 	border: "1px solid white"
   });
 
@@ -79,11 +80,11 @@ function decorate(editor: vscode.TextEditor) {
   
 	let decorationsArray: vscode.DecorationOptions[] = [];
 
-	let myRange = new vscode.Range(
+	let range = new vscode.Range(
 		new vscode.Position(1, 0),
 		new vscode.Position(1, 100)
 	  );
-	let deco = { myRange };
+	let deco = { range };
 	
 
 	const sourceCodeArr = sourceCode.split("\n");
@@ -94,7 +95,7 @@ function decorate(editor: vscode.TextEditor) {
 	  if (match !== null && match.index !== undefined) {
 		let range = new vscode.Range(
 		  new vscode.Position(line, match.index),
-		  new vscode.Position(line, match.index + 100)
+		  new vscode.Position(line, match.index + 2)
 		);
 		
 		
