@@ -12,6 +12,7 @@
 	"activationEvents": [
 		"onCommand:vstoDo.helloWorld",
 		"onCommand:vstoDo.askQuestion",
+		"onCommand:vstoDo.addTodo",
 		"onView:vstodo-sidebar"
 	],
 	"main": "./out/extension.js",
@@ -45,6 +46,11 @@
 				"command": "vstoDo.askQuestion",
 				"category": "VSTodo",
 				"title": "Ask a Question"
+			},
+			{
+				"command": "vstoDo.addTodo",
+				"category": "VSTodo",
+				"title": "Add todo from Selection"
 			}
 		]
 	},
